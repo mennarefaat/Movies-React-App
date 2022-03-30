@@ -7,3 +7,19 @@
 }
 
 
+.page-item{
+  display:inline-block;
+  margin-left:30%
+}
+
+.page-link{
+  background-color:rgb(253, 254, 255);
+  padding:10px;
+  border-radius:10px;
+  color:rgb(255, 47, 0);
+}
+
+.page-link:hover{
+  background-color: gray;
+  cursor: pointer;
+}
