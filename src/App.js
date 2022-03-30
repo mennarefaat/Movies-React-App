@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import getDesignTokens from './components/them'
+import Box from '@mui/material/Box';
+import './App.css'
+import AppBar from './components/Navbar'
+import Movies from './pages/Home'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import OneMovie from './pages/movie';
+
+
+
+const darkModeTheme = createTheme(getDesignTokens('dark'));
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ThemeProvider theme={darkModeTheme}>
+      <Box sx={{
+
+        bgcolor: 'background.default',
+        color: 'text.primary',
+      }}
+      >
+        <Router>
+          <AppBar/>
+              <Route path="/home"  component={Movies} />
+              <Route path="/movie/:id" component={OneMovie} />
+        </Router>
+        {/* <Movies></Movies> */}
+      </Box>
+    </ThemeProvider>
+
   );
 }
 
