@@ -31,7 +31,7 @@ export default function OneMovie(){
             irection: "column-reverse",
             justifyContent: "center",
             alignItems: "center",
-            maxWidth: 345,
+            maxWidth: 500,
             height: 700,
             margin: '2%',
             display: 'inline-block',

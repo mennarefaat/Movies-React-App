@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux'
+
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -20,6 +22,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const fav = (useSelector((state) => state.favourite.counter))
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -112,7 +117,16 @@ const ResponsiveAppBar = () => {
               Movies
             </Button>
               </Link>
+
+              <Link to="/favourites">
+            <Button
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            >
+              Your Favourites {fav}
+            </Button>
+              </Link>
           </Box>
+          
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
