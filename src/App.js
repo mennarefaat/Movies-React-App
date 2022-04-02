@@ -9,7 +9,7 @@ import OneMovie from './pages/movie';
 import Favourite from './pages/favourite';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js';
-import { useSelector } from 'react-redux';
+<link rel="manifest" href="/manifest.json"></link>
 
 const darkModeTheme = createTheme(getDesignTokens('dark'));
 

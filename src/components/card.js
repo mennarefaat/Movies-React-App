@@ -29,7 +29,7 @@ export default function ActionAreaCard({ moviesData }) {
             justifyContent: "center",
             alignItems: "center",
             width:350,
-            height: 550,
+            height: 590,
             margin: '2%',
             display: 'inline-block',
 
@@ -43,10 +43,13 @@ export default function ActionAreaCard({ moviesData }) {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {moviesData.title}
+                        {moviesData?.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {moviesData.release_date}
+                        {moviesData?.release_date}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {moviesData?.overview}
                     </Typography>
                     <Link to={`/movie/${moviesData.id}`} style={{textDecoration:"none"}} >
                         <CustomizedButtons name="Movie Detail">

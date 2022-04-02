@@ -13,7 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux'
-
+// import { useEffect, useState } from "react";
+// import { useDispatch } from "react-redux";
+// import {setLang} from '../store/actions/langMovies'
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -22,24 +24,28 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  // const [lang, setlang] = useState("en")
   const fav = (useSelector((state) => state.favourite.counter))
-
-
+  
+  
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav("");
   };
-
+  
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+ 
+
 
   return (
     <AppBar position="static" >
@@ -83,16 +89,16 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-                <MenuItem  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
-                </MenuItem>
-                <MenuItem  onClick={handleCloseNavMenu}>
-                <Link to="/home" style={{textDecoration:"none"}}>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Home</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link to="/home" style={{ textDecoration: "none" }}>
                   <Typography textAlign="center">Movies</Typography>
-                  </Link>
-                </MenuItem>
-         
-         
+                </Link>
+              </MenuItem>
+
+
             </Menu>
           </Box>
           <Typography
@@ -111,22 +117,22 @@ const ResponsiveAppBar = () => {
               Home
             </Button>
             <Link to="/home">
-            <Button
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              Movies
-            </Button>
-              </Link>
+              <Button
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Movies
+              </Button>
+            </Link>
 
-              <Link to="/favourites">
-            <Button
-              sx={{ my: 2, color: 'white', display: 'block' }}
-            >
-              Your Favourites {fav}
-            </Button>
-              </Link>
+            <Link to="/favourites">
+              <Button
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Your Favourites {fav}
+              </Button>
+            </Link>
           </Box>
-          
+    
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

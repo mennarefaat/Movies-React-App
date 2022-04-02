@@ -1,3 +1,6 @@
 export const SET_FAVOURITE= 'SET_FAVOURITE'
 export const SET_COUNTER ='SET_COUNTER'
 export const SET_REDUCE ='SET_REDUCE'
+export const SET_LANGUAGE ='SET_LANGUAGE'
+export const SET_PAGE ='SET_PAGE'
+export const SET_ID ='SET_ID'
