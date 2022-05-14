@@ -51,7 +51,7 @@ export default function Movies(props) {
           </Button>
                 {/* <ComboBox movies={movies}/> */}
                 {movies?.map((movie) => {
-                    return <Card moviesData={movie} key={movie.id} ></Card>
+                    return <Card moviesData={movie} key={movie.id} />
 
                 })}
 

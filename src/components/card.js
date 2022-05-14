@@ -9,6 +9,7 @@ import CustomizedButtons from './Button'
 import { useDispatch, useSelector } from "react-redux";
 import {setFavourite} from '.././store/actions/favourite'
 import { setReducer } from '.././store/actions/reduce'
+import{ AiOutlineHeart }from'react-icons/ai'; 
 
 
 
@@ -48,18 +49,18 @@ export default function ActionAreaCard({ moviesData }) {
                     <Typography variant="body2" color="text.secondary">
                         {moviesData?.release_date}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    {/* <Typography variant="body2" color="text.secondary">
                         {moviesData?.overview}
-                    </Typography>
+                    </Typography> */}
                     <Link to={`/movie/${moviesData.id}`} style={{textDecoration:"none"}} >
                         <CustomizedButtons name="Movie Detail">
                         </CustomizedButtons>
                     </Link>
                 </CardContent>
             </CardActionArea>
+            <AiOutlineHeart style={{fillColor:"white"}}/>
             <Button onClick={addFavMovie} >Favourites </Button>
             <Button onClick={(()=>{removeFavourite(moviesData)})} >Delete</Button>
-
         </Card>
     );
-}
+                }

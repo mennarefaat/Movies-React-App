@@ -9,6 +9,7 @@ import OneMovie from './pages/movie';
 import Favourite from './pages/favourite';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js';
+import '@fortawesome/fontawesome-free'
 <link rel="manifest" href="/manifest.json"></link>
 
 const darkModeTheme = createTheme(getDesignTokens('dark'));
